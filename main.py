@@ -32,14 +32,15 @@ while is_on:
             or snake.head.xcor()<-280
             or snake.head.ycor()>280
             or snake.head.ycor()<-280):
-        scoreboard.game_over()
-        is_on=False
+        scoreboard.reset_score()
+        snake.reset()
+
 
 
 
     for segments in snake.segments[1:]:#collision with the tail
         if snake.head.distance(segments)<10:
-            scoreboard.game_over()
+            scoreboard.reset_score()
             is_on=False
 
 
